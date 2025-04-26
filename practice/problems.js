@@ -191,3 +191,157 @@ console.log("array-2 "+ arr2);
     console.log("revised array after swap")
     console.log("array-1 "+arr1)
     console.log("array-2 "+arr2)
+
+  
+11 //
+
+//let arr=[]
+
+for(let i=0;i<10;i++){
+   let elements= prompt("enter array elements")
+   arr[i] = elements
+}
+
+console.log("array "+arr)
+let count=0
+
+for(let i=0;i<10;i++){
+    if(arr[i] %2 ==0){
+         count++;
+    }
+}
+
+console.log("even numbers count  "+count);
+
+
+12 //
+
+
+//let arr=[]
+
+for(let i=0;i<5;i++){
+   let elements= prompt("enter array elements")
+   arr[i] = elements
+}
+
+console.log("array "+arr)
+
+ let newarr=arr.sort((a,b)=> b-a);
+
+console.log("sorted array  "+newarr);
+
+
+13 //
+
+let string = prompt("enter a string: ");
+
+let arra = string.split('');
+
+let reversed = array.reverse()
+
+let joinArray = reversed.join('')
+
+if(string === joinArray){
+
+    console.log("the word is a palindrome");
+    }
+    else{
+
+        console.log("the word is not a palindrome");
+        }
+
+
+/ 14 ///
+
+
+
+//let arr1=[];
+
+//let arr2=[];
+
+//let sum=[];
+
+//let limit =parseInt(prompt("Enter the limit "))
+for(let i=0 ; i<limit ; i++){
+
+    arr1[i]=[];
+
+    arr2[i]=[];
+
+    sum[i]=[];
+
+    for(let j=0 ; j<limit ; j++){
+
+        arr1[i][j]=parseInt(prompt("Array 1: "));
+
+        arr2[i][j]=parseInt(prompt("Array 2: "));
+
+        sum[i][j]=arr1[i][j]+arr2[i][j];
+    }
+}
+console.log("array -1")
+console.log(arr1)
+
+console.log("array -2")
+console.log(arr2)
+
+console.log("Sum of the array  ")
+
+for(let i=0 ; i<limit ; i++){
+
+    console.log(sum[i].join(" "));
+}
+
+15 ///
+
+
+function getArray(arr, limit) {
+
+    for(let i = 0; i < limit; i++) {
+
+        let element = parseInt(prompt("Enter the element "));
+        arr[i] = element;
+    }
+}
+
+function displayArray(arr, limit) {
+
+    console.log("Array ");
+    for(let i = 0; i < limit; i++) {
+
+        console.log(arr[i]);
+    }
+}
+
+let arr = [];
+//let limit = 5;
+
+getArray(arr, limit);
+displayArray(arr, limit);
+
+/ 16 ///
+
+let num=parseInt(prompt("Enter the number: "));
+
+let flag=0;
+for(let i=2 ; i<num ; i++){
+
+    if(num%i==0){
+
+        flag=1;
+        break;
+    }
+}
+
+console.log("entered number - "+num)
+
+if(flag==0){
+
+    console.log("It's a prime number");
+}
+else
+    {
+    console.log("It's not a prime number");
+    }
+
+    
