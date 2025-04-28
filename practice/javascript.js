@@ -344,11 +344,98 @@
 
 ////IIFE ///
 
-// let x = 30;
+let x = 30;
 
-// (function fn(){
-//     let x = 20;
+(function fn(){
+    let x = 20;
+    console.log(x)
+})();
+
+console.log(x);
+
+// BLOCK SCOPE ///
+
+// function demo(){
+
+//     if(true){
+//         let x="heloo"
+//         console.log(x);
+//     }
 //     console.log(x)
-// })();
+// }
 
-// console.log(x);
+// demo()
+
+// const numbers = [1,2,3,4,5]
+
+// const output = numbers.reduce(function(num,num2){
+//     return num + num2;
+// })
+
+// console.log(output)
+
+
+// GENERATOR ///
+
+// function* myGenerator() {
+//     yield 1; // This is a pause point
+//     yield 2;
+//     yield 3;
+//   }
+  
+//   const generator = myGenerator();
+  
+//   console.log(generator.next()); // { value: 1, done: false }
+//   console.log(generator.next()); // { value: 2, done: false }
+//   console.log(generator.next()); // { value: 3, done: false }
+//   console.log(generator.next()); // { value: undefined, done: true }
+
+
+//// print 1 to 100 generator////
+
+  // function* generatorfn(){
+  //   for(let i=1;i<=100;i++){
+  //       yield i;
+  //   }
+  // }
+  // const gererator =generatorfn();
+
+  // for(const aaa of gererator){
+  //   console.log(aaa)
+  // }
+
+  // for(let i=1;i<=100;i++){
+  //   console.log(gererator.next().value)
+  // }
+
+//// setIntervel ///
+// let count=0
+
+// console.log("start")
+
+// const intervelId = setInterval(function(){
+
+//     count ++
+//     console.log(count)
+
+//     if(count >=5){
+//         clearInterval(intervelId)
+//         console.log("end...")
+//     }
+// },2000);
+
+
+//// CALL METHOD ///
+
+// const person={
+//   name : "praveen",
+//   greet : function(message){
+//     console.log(this.name+ " says " +message)
+//   },
+// };
+
+// const person2 ={
+//   name : "ajay",
+// };
+
+// person.greet.apply(person, ["hello."]);
