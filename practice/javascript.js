@@ -489,3 +489,83 @@ async function async() {
 }
 
 async()
+
+
+
+// const promise1 = Promise.resolve(3);
+// const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 'foo'));
+// const promise3 = new Promise((resolve, reject) => setTimeout(reject, 50, 'bar'));
+
+// Promise.race([promise1, promise2, promise3])
+//   .then((results) => {
+//     console.log('All promises resolved:', results);
+//   })
+//   .catch((error) => {
+//     console.error('One of the promises rejected:', error);
+//   });
+
+
+// const promise1 = Promise.reject('Error 1');
+// const promise2 = Promise.reject('Error 2');
+// const promise3 = Promise.resolve('error 3')
+// // new Promise((resolve) => {
+// //   setTimeout(resolve, 100, 'Success!');
+// // });
+
+// Promise.any([promise1, promise2, promise3])
+//   .then((value) => {
+//     console.log(value); // Output: 'Success!'
+//   })
+//   .catch(error => {
+//     console.error('All promises were rejected:', error);
+//   });
+
+//// PROMISE.ALL ////
+// const promise1 = Promise.resolve("hello")
+// const promise2 = Promise.reject("hai")
+// const promise3 = Promise.resolve("hhh")
+
+// Promise.all([promise1,promise2,promise3])
+// .then(data =>{
+//   console.log("all promise were suceccs",data)
+// })
+// .catch(error =>{
+//   console.log("promise were rejected",error)
+// })
+
+///// PROMISE.ALLSETTLED ///
+
+
+// const promise1 = Promise.resolve(1)
+// const promise2 = Promise.resolve(2)
+// const promise3 = Promise.resolve(3)
+
+// Promise.allSettled([promise1,promise2,promise3])
+// .then(data =>{
+//   console.log("all promise result : ",data)
+// })
+
+/// PROMISE.RACE ///
+
+
+// const promise1 = new Promise((resolve , reject)=>{
+//   setTimeout(resolve ,3000 , 1)
+// });
+
+// const promise2 = new Promise((resolve, reject) => {
+//   setTimeout(()=>{
+//      reject (5555)
+//   },1000)
+// })
+
+// const promise3 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 4000, 3)
+// })
+
+// Promise.race([promise1,promise2,promise3])
+// .then(result =>{
+//   console.log("success",result)
+// })
+// .catch(error =>{
+//   console.log("rejected",error)
+// })
