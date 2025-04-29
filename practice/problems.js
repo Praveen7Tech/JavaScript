@@ -672,3 +672,118 @@
 //         console.log("You haven't read it")
 //     }
 // })
+
+
+/// 26 ///
+
+// const myString="Brototype";
+// try{
+
+//     const reverseString=myString.split("").reverse().join("");
+//     console.log("Reversed string is "+reverseString);
+// }
+
+// catch(error){
+
+//     console.log("Error:",error.message);
+// }
+
+// finally{
+
+//     console.log("Type of string is:" + typeof myString);
+// }
+
+
+// 27 //
+
+// let height=prompt("Enter your height:");
+
+// console.log("height - "+height);
+
+// try{
+
+//     if(isNaN(height)){
+        
+//         throw new Error("NotANumberError");
+//     }
+
+//     else if(height>76){
+
+//         throw new Error("HugeHeightError");
+//     }
+
+//     else if(height<10){
+
+//         throw new Error("TinyHeightError");
+//     }
+
+//     else{
+
+//         console.log(height);
+//     }
+// }
+
+// catch(error){
+
+//     console.log(error.message);
+// }
+
+
+
+// 28 //
+
+// function Car(name,mileage,max_speed){
+
+//     this.name=name;
+//     this.mileage=mileage ;
+//      this.max_speed=max_speed;
+// }
+
+// const car1=new Car("innova",7,160);
+// const car2=new Car("GT-R",3,300);
+
+// console.log(car1);
+
+// console.log(car2)
+
+// 29 //
+
+// let myArray = [10, 25,34, 57,80];
+
+// function myFilter(myArray, callback){
+
+//     let result = callback(myArray);
+//     console.log(result);
+//     if (result % 2 == 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function callback(myArray){
+   
+//     return myArray.reduce((total, value) => total + value, 0);
+// }
+
+// let isEven = myFilter(myArray, callback);
+// console.log( isEven);
+
+
+/// 
+// const mypromise = new Promise((resolve , reject) =>{
+//     const success = false;
+
+//     if(success){
+//         resolve ("program successfull")
+//     } else{
+//         reject  ("failed...")
+//     }
+// });
+
+// mypromise.then((message) =>{
+//     console.log(message);
+// })
+// .catch((error)=>{
+//     console.log(error);
+// })
