@@ -439,3 +439,53 @@
 // };
 
 // person.greet.apply(person, ["hello."]);
+
+///// BIND METHOD ///
+
+// const person1 = {
+//   name :"praveen",
+//   greet : function(message){
+   // console.log(this.name+ " says "+message)
+//   },
+// };
+
+// const person2 ={
+//   name :"ajay",
+// };
+
+
+
+//  const newresult = person1.greet.bind(person1)
+
+//  newresult("hello");
+
+
+
+// function maindata(){
+//   return new Promise ((resolve , reject) =>{
+//     console.log("fetching data...")
+
+//     setTimeout(()=>{
+//       const success = false
+//       if(success){
+//         const details={name : "praveen", age :25}
+//         resolve(details)
+//       }
+//       else{
+//         reject("failed to fetch data...")
+//       }
+//     },3000)
+//   })
+// };
+
+async function async() {
+  try{
+    const data = await maindata()
+    console.log("user details :",data)
+  }
+  catch(error){
+    console.log("ERROR : ",error)
+  }
+}
+
+async()
