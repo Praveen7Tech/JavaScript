@@ -62,28 +62,122 @@
 
 // Promise.race()
 
-const promise1 = new Promise((res,rej)=>{
-    setTimeout(()=>{
-        res("promise 1")
-    },3000)
-})
+// const promise1 = new Promise((res,rej)=>{
+//     setTimeout(()=>{
+//         res("promise 1")
+//     },3000)
+// })
 
-const promise2 = new Promise((res,rej)=>{
-    setTimeout(()=>{
-        rej("promise 2")
-    },1500)
-})
+// const promise2 = new Promise((res,rej)=>{
+//     setTimeout(()=>{
+//         rej("promise 2")
+//     },1500)
+// })
 
-const promise3 = new Promise((res,rej)=>{
-    setTimeout(()=>{
-        rej("promise 3")
-    },1000)
-})
+// const promise3 = new Promise((res,rej)=>{
+//     setTimeout(()=>{
+//         rej("promise 3")
+//     },1000)
+// })
 
-Promise.race([promise1,promise2,promise3])
-.then(result =>{
-  console.log("success",result)
-})
-.catch(error =>{
-  console.log("rejected",error)
-})
+// Promise.race([promise1,promise2,promise3])
+// .then(result =>{
+//   console.log("success",result)
+// })
+// .catch(error =>{
+//   console.log("rejected",error)
+// })
+
+///////////////////////////
+
+// Second Largest value from array
+
+// let arr = [1,25,3,4,5,6]
+
+// let large = 0
+// let second = 0
+// let third = 0
+
+// for(let num of arr){
+//     if(num > large){
+//         third = second
+//         second = large
+//         large = num
+//     }
+//     else if(num > second && num < large){
+//         second = num
+//     }
+//     else if(num > third && num < second){
+//         third = num
+//     }
+// }
+// console.log(large)
+// console.log(second)
+// console.log(third)
+
+////////////////////////////
+
+// Remove duplicate from array
+
+//let arr = [10, 5, 10, 3, 12, 5, 7, 3, 30];
+
+// for(let i = 0 ; i < arr.length ; i++){
+//     for(let j = i + 1 ; j < arr.length ; j++){
+//         if(arr[i] === arr[j]){
+//             for(let k = j ; k < arr.length ; k++){
+//                 arr[k] = arr[k + 1]
+//             }
+//             arr.length--
+//             j--
+//         }
+//     }
+// }
+
+// console.log(arr)
+
+// remove all duplicate values from an array and show only unique
+
+// let arr = [2, 5, 6, 2, 3, 5, 7, 8, 3];
+
+// for(let i = 0 ; i < arr.length ; i++){
+//     let count = 0
+//     for(let j = 0 ; j < arr.length ; j++){
+//         if(arr[i] === arr[j]){
+//             count++
+//         }
+//     }
+//     if(count > 1){
+//         let val =  arr[i]
+//         for(let k = 0 ; k < arr.length ; k++){
+//             if(arr[k] === val){
+//                 for(let m = k ; m < arr.length ; m++){
+//                     arr[m] = arr[m + 1]
+//                 }
+//                 arr.length--
+//                 k--
+//             }
+//         }
+//         i--
+//     }
+// }
+
+// console.log(arr)
+
+
+// REMOVE DUPLICATES USING HOF (filter,reduce)
+
+let arr = [2, 5, 6, 2, 3, 5, 7, 8, 3];
+
+//FILTER
+// let ans = arr.filter((value, i, arr) => arr.indexOf(value) === arr.lastIndexOf(value))
+// console.log(ans)
+
+//REDUCE, FILTER
+let ans = arr.reduce((acc, curr)=>{
+    acc[curr] = (acc[curr] || 0) + 1
+    return acc
+},{})
+
+let final = arr.filter((value) => ans[value] === 1)
+
+console.log(final)
