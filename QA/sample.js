@@ -166,18 +166,34 @@
 
 // REMOVE DUPLICATES USING HOF (filter,reduce)
 
-let arr = [2, 5, 6, 2, 3, 5, 7, 8, 3];
+// let arr = [2, 5, 6, 2, 3, 5, 7, 8, 3];
 
 //FILTER
 // let ans = arr.filter((value, i, arr) => arr.indexOf(value) === arr.lastIndexOf(value))
 // console.log(ans)
 
 //REDUCE, FILTER
-let ans = arr.reduce((acc, curr)=>{
-    acc[curr] = (acc[curr] || 0) + 1
-    return acc
-},{})
+// let ans = arr.reduce((acc, curr)=>{
+//     acc[curr] = (acc[curr] || 0) + 1
+//     return acc
+// },{})
 
-let final = arr.filter((value) => ans[value] === 1)
+// let final = arr.filter((value) => ans[value] === 1)
 
-console.log(final)
+// console.log(final)
+
+
+/////////////////////////////////
+
+// ARROW FUNCTION
+
+let sum = (a,b)=> a + b;
+console.log(sum(5,8))
+
+let arr = [1,2,3,4,5]
+let ans = arr.reduce((acc, curr) => acc + curr ,0)
+console.log(ans)
+
+let sumValues = (...arr) => arr.reduce((acc, curr) => acc + curr ,0)
+console.log(sumValues(2,4,6,8,10))
+console.log(sumValues(1,3,5,7,9))
