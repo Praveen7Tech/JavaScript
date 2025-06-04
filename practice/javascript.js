@@ -508,9 +508,9 @@ async()
 // const promise1 = Promise.reject('Error 1');
 // const promise2 = Promise.reject('Error 2');
 // const promise3 = Promise.resolve('error 3')
-// // new Promise((resolve) => {
-// //   setTimeout(resolve, 100, 'Success!');
-// // });
+// new Promise((resolve) => {
+//   setTimeout(resolve, 100, 'Success!');
+// });
 
 // Promise.any([promise1, promise2, promise3])
 //   .then((value) => {
@@ -520,7 +520,7 @@ async()
 //     console.error('All promises were rejected:', error);
 //   });
 
-//// PROMISE.ALL ////
+// PROMISE.ALL ////
 // const promise1 = Promise.resolve("hello")
 // const promise2 = Promise.reject("hai")
 // const promise3 = Promise.resolve("hhh")
@@ -533,7 +533,7 @@ async()
 //   console.log("promise were rejected",error)
 // })
 
-///// PROMISE.ALLSETTLED ///
+/// PROMISE.ALLSETTLED ///
 
 
 // const promise1 = Promise.resolve(1)
@@ -569,3 +569,5 @@ async()
 // .catch(error =>{
 //   console.log("rejected",error)
 // })
+
+
