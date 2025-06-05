@@ -187,13 +187,88 @@
 
 // ARROW FUNCTION
 
-let sum = (a,b)=> a + b;
-console.log(sum(5,8))
+// let sum = (a,b)=> a + b;
+// console.log(sum(5,8))
 
-let arr = [1,2,3,4,5]
-let ans = arr.reduce((acc, curr) => acc + curr ,0)
-console.log(ans)
+// let arr = [1,2,3,4,5]
+// let ans = arr.reduce((acc, curr) => acc + curr ,0)
+// console.log(ans)
 
-let sumValues = (...arr) => arr.reduce((acc, curr) => acc + curr ,0)
-console.log(sumValues(2,4,6,8,10))
-console.log(sumValues(1,3,5,7,9))
+// let sumValues = (...arr) => arr.reduce((acc, curr) => acc + curr ,0)
+// console.log(sumValues(2,4,6,8,10))
+// console.log(sumValues(1,3,5,7,9))
+
+/////////////////////////////
+
+// find average of using HOF 
+
+// let arr = [1,2,3,4,5,6,7,8,9,10]
+// let even = arr.filter(num => num % 2 === 0)
+// let avg = even.reduce((acc,curr)=> acc + curr ,0) / even.length
+// console.log(avg)
+
+////////////////////////
+
+// Callback 
+
+// function Data(name){
+//     console.log("Hello", name)
+// }
+
+// function person(Callback){
+//     let name = "Praveen"
+//     Callback(name)
+// }
+
+// person(Data)
+
+////////////////
+
+// function FetchData(callback){
+//     console.log("Fetching data...")
+//     setTimeout(()=>{
+//         const data = {name : "Praveen",
+//             age : "25"
+//         }
+//         callback(data)
+//     },2000)
+// }
+
+// function UserData(data){
+//     console.log("User Data :",data)
+// }
+
+// FetchData(UserData)
+
+//////////////////////////////////////
+
+// Closure
+
+function Outer(){
+    let count = 0
+
+    function inner(){
+        count++
+        console.log(count)
+    }
+
+    return inner
+}
+
+const outer = Outer()
+
+outer()
+
+////////////////////
+
+function multiply(factor){
+    return function(num){
+        return num * factor
+    }
+}
+
+const double = multiply(5)
+const triple = multiply(5)
+
+console.log(double(2))
+console.log(triple(3))
