@@ -244,31 +244,52 @@
 
 // Closure
 
-function Outer(){
-    let count = 0
+// function Outer(){
+//     let count = 0
 
-    function inner(){
-        count++
-        console.log(count)
-    }
+//     function inner(){
+//         count++
+//         console.log(count)
+//     }
 
-    return inner
-}
+//     return inner
+// }
 
-const outer = Outer()
+// const outer = Outer()
 
-outer()
+// outer()
 
 ////////////////////
 
-function multiply(factor){
-    return function(num){
-        return num * factor
-    }
-}
+// function multiply(factor){
+//     return function(num){
+//         return num * factor
+//     }
+// }
 
-const double = multiply(5)
-const triple = multiply(5)
+// const double = multiply(5)
+// const triple = multiply(5)
 
-console.log(double(2))
-console.log(triple(3))
+// console.log(double(2))
+// console.log(triple(3))
+
+/////////////////////////////////
+
+// Hoisting
+
+// function sayHello() {
+//   if (true) {
+//     console.log(name); 
+//     var name = "Praveen";
+//   }
+// }
+//sayHello();
+
+
+// function sayHello() {
+//   if (true) {
+//     console.log(name); 
+//     let name = "Praveen";
+//   }
+// }
+// sayHello();
