@@ -3,7 +3,7 @@
 const express = require('express')
 const {fork} = require('child-process')
 
-const app = express()
+//const app = express()
 app.use(expressjson())
 
 app.post("/uploads",(req,res)=>{
@@ -39,3 +39,28 @@ process.on("message", (data)=>{
         process.send("Video processed successfully")
     },4000)
 })
+
+////////////////////////
+
+// Route Chaining
+
+const express = require('express');
+const app = express();
+
+app.route('/user')
+  .get((req, res) => {
+    res.send('GET request to /user');
+  })
+  .post((req, res) => {
+    res.send('POST request to /user');
+  })
+  .put((req, res) => {
+    res.send('PUT request to /user');
+  })
+  .delete((req, res) => {
+    res.send('DELETE request to /user');
+  });
+
+app.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
+});
