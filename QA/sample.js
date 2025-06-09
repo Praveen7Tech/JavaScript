@@ -261,6 +261,8 @@
 
 ////////////////////
 
+// Currying
+
 // function multiply(factor){
 //     return function(num){
 //         return num * factor
@@ -352,7 +354,7 @@ let obj1 ={
     5 : "felwin"
 }
 
-let ans = Object.keys(obj).sort().at(-1)
+//let ans = Object.keys(obj).sort().at(-1)
 let ans1 = Math.max(...Object.keys(obj1))
 
 console.log(ans1)
@@ -362,7 +364,7 @@ console.log(ans1)
 
 // FREQUENCY OF ARRAY
 
-let arr= [1,2,3,1,4,5,2,7,3,8,5,10]
+//let arr= [1,2,3,1,4,5,2,7,3,8,5,10]
 
 let count = {}
 
