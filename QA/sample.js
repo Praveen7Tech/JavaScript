@@ -293,3 +293,83 @@
 //   }
 // }
 // sayHello();
+
+
+///////////////////////////
+
+// CALL , APPLY, BIND
+
+const person1 ={name: "Praveen"}
+const person2 ={name : "Felwin"}
+
+function sample(msg){
+    console.log(`${msg}, ${this.name}`)
+}
+
+sample.call(person2, "Hai")
+
+//////////////////
+
+let user ={
+    name : "Praveen",
+    greet(msg){
+        console.log(`${msg}, ${this.name}`)
+    }
+}
+
+let user2 = {name : "Rohith"}
+
+user.greet.call(user2,"Hello")
+
+/////////////////////////
+
+// CURRYING 
+
+function add(x){
+    return function(y){
+        return x + y
+    }
+}
+
+const add1 = add(5)
+const result = add1(4)
+
+console.log(result)
+
+//////////////////////////
+
+// Larger key
+
+let obj = {
+    one : 100,
+    two : 200,
+    three : 300
+}
+
+let obj1 ={
+    10 : "praveen",
+    7 : "rohith",
+    5 : "felwin"
+}
+
+let ans = Object.keys(obj).sort().at(-1)
+let ans1 = Math.max(...Object.keys(obj1))
+
+console.log(ans1)
+
+//////////////////////////
+
+
+// FREQUENCY OF ARRAY
+
+let arr= [1,2,3,1,4,5,2,7,3,8,5,10]
+
+let count = {}
+
+for(let num of arr){
+    count[num] = (count[num] || 0) + 1
+}
+
+let sort = Object.entries(count).sort((a,b)=> b[1] - a[1])
+
+console.log(sort)
