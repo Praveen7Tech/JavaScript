@@ -52,8 +52,29 @@
 
 // EVAL()
 
-eval("let x = 10; console.log(x)")
-const num = 10;
-eval("console.log(num + 10)")
+// eval("let x = 10; console.log(x)")
+// const num = 10;
+// eval("console.log(num + 10)")
 
-eval("console.log('Hello world')")
+// eval("console.log('Hello world')")
+
+///////////////////////@ts-check
+
+// WEAK REFERENCE
+
+let obj = {name : "Praveen"}
+
+const weakRef = new WeakRef(obj)
+
+console.log(weakRef.deref())
+
+// WEAK MAP
+
+let user = { name: "Praveen" };
+const secretData = new WeakMap();
+
+secretData.set(user, "MySecret");
+
+console.log(secretData.get(user)); 
+
+user = null; 
