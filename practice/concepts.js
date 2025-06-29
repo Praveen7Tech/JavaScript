@@ -70,11 +70,53 @@ console.log(weakRef.deref())
 
 // WEAK MAP
 
-let user = { name: "Praveen" };
-const secretData = new WeakMap();
+let user = {name : "Praveen"}
 
-secretData.set(user, "MySecret");
+const weakMp = new WeakMap()
+weakMp.set(user, "user data")
 
-console.log(secretData.get(user)); 
+user = null                        // obj reference make null so obj, GB
+console.log(weakMp.get(user))
 
-user = null; 
+/////////////////
+
+// WEAK SET
+
+const weakst = new WeakSet()
+
+let obj1 = {a : 1}
+let obj2 = {b : "Name"}
+
+weakst.add(obj1)
+weakst.add(obj2)
+
+console.log(weakst.has(obj1))
+
+weakst.delete(obj1)
+
+console.log(weakst.has(obj1))
+
+///////////////////
+
+// STATIC KEYWORD
+
+class Car {
+  constructor(name) {
+    this.name = name;
+  }
+
+  static identify() {
+    return "I am a car class.";
+  }
+
+  showName() {
+    return `Car name is ${this.name}`;
+  }
+}
+
+const myCar = new Car("BMW");
+
+console.log(Car.identify());     
+console.log(myCar.showName());   
+
+//console.log(myCar.identify());  // Error
