@@ -77,3 +77,155 @@ console.log(stack.pop())
 console.log(stack.peek())
 stack.display()
 
+//stack using linkedList
+
+class Node {
+    constructor(value){
+        this.value = value
+        this.next = null
+    }
+}
+
+class StackUsingList {
+    constructor(){
+        this.top = null
+        this.size  = 0
+    }
+
+    push(value){
+        const node = new Node(value)
+
+        node.next = this.top
+        this.top = node
+        this.size++
+    }
+
+    pop(){
+        const removeNode = this.top
+        this.top = removeNode.next
+        this.size--
+
+        return removeNode.value
+    }
+
+    peek(){
+        return this.top.value
+    }
+
+    display(){
+        let curr = this.top
+        let result = []
+        while(curr){
+            result.push(curr.value)
+            curr =curr.next
+        }
+        console.log(result)
+    }
+}
+
+
+const stackLIst = new StackUsingList()
+
+stackLIst.push(10)
+stackLIst.push(20)
+stackLIst.push(30)
+stackLIst.push(40)
+stackLIst.display()
+
+console.log(stackLIst.pop())
+console.log(stackLIst.peek())
+
+////////////////////
+
+// Reverse Stack using Recursion
+
+class Stack {
+    constructor(){
+        this.stack = []
+    }
+
+    push(value){
+        this.stack.push(value)
+    }
+
+    pop(){
+        return this.stack.pop()
+    }
+
+    peek(){
+        return this.stack[this.stack-1]
+    }
+
+    isEmpty(){
+        return this.stack.length === 0
+    }
+
+    display(){
+        console.log(this.stack)
+    }
+}
+
+function reverse(stack,reversed=[]){
+    if(stack.isEmpty()) return
+    
+    reversed.push(stack.pop())
+
+    reverse(stack,reversed)
+
+    stack.push(reversed.shift())
+}
+
+//const stack = new Stack()
+
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+stack.display()
+
+reverse(stack)
+
+stack.display()
+/////////////////
+
+//Impliment STACK using QUEUE
+
+class StackUsingQue {
+    constructor(){
+        this.queue = []
+    }
+
+    push(value){
+        this.queue.push(value)
+
+        for(let i=0;i<this.queue.length - 1;i++){
+            this.queue.push(this.queue.shift())
+        }
+    }
+
+    pop(){
+        return this.queue.shift()
+    }
+
+    peek(){
+        return this.queue[0]
+    }
+
+    display(){
+        console.log(this.queue)
+    }
+}
+
+const StackQueue = new StackUsingQue()
+
+StackQueue.push(10)
+StackQueue.push(20)
+StackQueue.push(30)
+StackQueue.push(40)
+StackQueue.display()
+
+console.log(StackQueue.pop())
+console.log(StackQueue.peek())
+StackQueue.display()
+/////////////////////////
+
