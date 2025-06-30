@@ -250,3 +250,24 @@ function Higher(num){
 
 const answer = Higher(5)
 console.log(answer(2))
+
+/////////////
+
+// 15 DAYS BEFORE DATE
+
+let today = new Date()
+let before = new Date()
+
+before.setDate(today.getDate() - 15)
+console.log(before.toDateString())
+
+//////////////
+
+// CURRENT TIME ONLY
+
+let now = new Date()
+let date = now.toLocaleDateString()
+let time = now.toLocaleTimeString()
+
+console.log(time)
+console.log(date)
