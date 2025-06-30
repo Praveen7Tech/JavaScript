@@ -62,61 +62,106 @@
 
 // WEAK REFERENCE
 
-let obj = {name : "Praveen"}
+// let obj = {name : "Praveen"}
 
-const weakRef = new WeakRef(obj)
+// const weakRef = new WeakRef(obj)
 
-console.log(weakRef.deref())
+// console.log(weakRef.deref())
 
-// WEAK MAP
+// // WEAK MAP
 
-let user = {name : "Praveen"}
+// let user = {name : "Praveen"}
 
-const weakMp = new WeakMap()
-weakMp.set(user, "user data")
+// const weakMp = new WeakMap()
+// weakMp.set(user, "user data")
 
-user = null                        // obj reference make null so obj, GB
-console.log(weakMp.get(user))
+// user = null                        // obj reference make null so obj, GB
+// console.log(weakMp.get(user))
 
-/////////////////
+// /////////////////
 
-// WEAK SET
+// // WEAK SET
 
-const weakst = new WeakSet()
+// const weakst = new WeakSet()
 
-let obj1 = {a : 1}
-let obj2 = {b : "Name"}
+// let obj1 = {a : 1}
+// let obj2 = {b : "Name"}
 
-weakst.add(obj1)
-weakst.add(obj2)
+// weakst.add(obj1)
+// weakst.add(obj2)
 
-console.log(weakst.has(obj1))
+// console.log(weakst.has(obj1))
 
-weakst.delete(obj1)
+// weakst.delete(obj1)
 
-console.log(weakst.has(obj1))
+// console.log(weakst.has(obj1))
 
-///////////////////
+// ///////////////////
 
-// STATIC KEYWORD
+// // STATIC KEYWORD
 
-class Car {
-  constructor(name) {
-    this.name = name;
+// class Car {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   static identify() {
+//     return "I am a car class.";
+//   }
+
+//   showName() {
+//     return `Car name is ${this.name}`;
+//   }
+// }
+
+// const myCar = new Car("BMW");
+
+// console.log(Car.identify());     
+// console.log(myCar.showName());   
+
+// //console.log(myCar.identify());  // Error
+
+
+// ////////////////////////////
+
+// // DATE FORMAT
+
+// let date = new Date()
+
+// let day = String(date.getDate()).padStart(2, "0")
+// let month = String(date.getMonth() + 1).padStart(2, "0")
+// let year = String(date.getFullYear())
+
+// console.log(`${day}/${month}/${year}`)
+
+// check all provided objects are empty
+
+// function isEmpty(obj){
+//   return obj && typeof obj === "object" && Object.keys(obj).length === 0
+// }
+
+// let obj = {}
+// console.log(isEmpty(obj))
+
+//////////////////
+
+
+// REMOVE LARGEST STRING FROM ARRAY
+
+const strings = ["car", "apple", "bikerrrrrrrrrrr", "elephant"];
+
+function removeLarge(arr){
+  let large = 0
+  let index = -1
+  for(let i = 0 ; i< arr.length ; i++){
+    if(arr[i].length > large){
+      large = arr[i].length
+      index = i
+    }
   }
 
-  static identify() {
-    return "I am a car class.";
-  }
-
-  showName() {
-    return `Car name is ${this.name}`;
-  }
+  arr.splice(index, 1)
+  return arr
 }
 
-const myCar = new Car("BMW");
-
-console.log(Car.identify());     
-console.log(myCar.showName());   
-
-//console.log(myCar.identify());  // Error
+console.log(removeLarge(strings))
