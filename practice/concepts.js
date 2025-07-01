@@ -242,32 +242,32 @@
 
 // HiGHER ORDER FUNCTION (return another function)
 
-function Higher(num){
-  return function(value){
-    return num * value
-  }
-}
+// function Higher(num){
+//   return function(value){
+//     return num * value
+//   }
+// }
 
-const answer = Higher(5)
-console.log(answer(2))
+// const answer = Higher(5)
+// console.log(answer(2))
 
-/////////////
+// /////////////
 
-// 15 DAYS BEFORE DATE
+// // 15 DAYS BEFORE DATE
 
-let today = new Date()
-let before = new Date()
+// let today = new Date()
+// let before = new Date()
 
-before.setDate(today.getDate() - 15)
-console.log(before.toDateString())
+// before.setDate(today.getDate() - 15)
+// console.log(before.toDateString())
 
-//////////////
+// //////////////
 
-// CURRENT TIME ONLY
+// // CURRENT TIME ONLY
 
-let now = new Date()
-let date = now.toLocaleDateString()
-let time = now.toLocaleTimeString()
+// let now = new Date()
+// let date = now.toLocaleDateString()
+// let time = now.toLocaleTimeString()
 
-console.log(time)
-console.log(date)
+// console.log(time)
+// console.log(date)
