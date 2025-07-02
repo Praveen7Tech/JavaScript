@@ -1,30 +1,4 @@
 
-// DELAY FUNCTION USING PROMISE
-
-// function delay(ms) {
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
-
-
-// async function fakeFetchUser() {
-//   try {
-//     console.log("⏳ Fetching user data...");
-
-//     await delay(2000); // simulate 2s delay like an API call
-
-//     const fakeUser = {
-//       id: 1,
-//       name: "Praveen",
-//       email: "praveen@example.com",
-//     };
-
-//     console.log("✅ User data fetched:", fakeUser);
-//   } catch (error) {
-//     console.error("❌ Error in fetching user:", error.message);
-//   }
-// }
-
-// fakeFetchUser()
 
 ////////////////////
 
