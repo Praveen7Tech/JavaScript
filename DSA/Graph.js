@@ -50,6 +50,47 @@ class Graph {
         delete this.graph[vertex]
     }
 
+    // BFS - Breadth first search
+    BFS(start){
+        let visited = new Set()
+        let queue = [start]
+        while(queue.length){
+            let vertex = queue.shift()
+            if(!visited.has(vertex)){
+                console.log(vertex)
+                visited.add(vertex)
+
+                for(let neighbor of this.graph[vertex]){
+                    if(!visited.has(neighbor)){
+                        queue.push(neighbor)
+                    }
+                }
+            }
+        }
+    }
+
+
+    // DFS - Depth first method
+    DFS(start){
+        let visited = new Set()
+        let stack = [start]
+        while(stack.length){
+            let vertex = stack.pop()
+            if(!visited.has(vertex)){
+                console.log(vertex)
+                visited.add(vertex)
+
+                for(let neighbor of this.graph[vertex]){
+                    if(!visited.has(neighbor)){
+                        stack.push(neighbor)
+                    }
+                }
+            }
+        }
+    }
+
+    
+
     display(){
         for(let vertex in this.graph){
             console.log(vertex+" - > "+[...this.graph[vertex]])
@@ -75,3 +116,10 @@ console.log(graph.hasEdge("A", "B"))
 
 // graph.removeEdge("A", "B")
 // graph.display()
+
+// graph.removeVertex("A")
+// graph.display()
+
+graph.BFS("A")
+console.log("///////////////")
+graph.DFS("A")
