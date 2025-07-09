@@ -28,3 +28,23 @@ if (cluster.isPrimary) {
 
   console.log(`Worker PID: ${process.pid} started`);
 }
+
+/////////////////////////
+
+// Process.NextTick()
+
+console.log("1")
+
+process.nextTick(()=>{
+  console.log("2")
+})
+
+setTimeout(() => {
+  console.log("3")
+}, 0);
+
+Promise.resolve().then(()=>{
+  console.log("4")
+})
+
+console.log("5")

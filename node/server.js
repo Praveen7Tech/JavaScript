@@ -2,6 +2,7 @@
 const http = require("http")
 const fs = require("fs")
 const filePath = "hello.txt"
+const cron = require("node-cron")
 
 const server = http.createServer((req,res)=>{
     res.writeHead(200,{
@@ -57,3 +58,13 @@ const connctDB = async(req,res)=>{
 }
 
 module.exports = connctDB
+
+
+// CRON JOB
+
+cron.schedule('0 9 * * *', ()=>{
+    console.log("Running this code every day 9:00 AM")
+})
+
+///////////////////////////
+
