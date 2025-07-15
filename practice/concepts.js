@@ -60,41 +60,41 @@
 
 // /////////////////////@ts-check
 
-// //WEAK REFERENCE
+//WEAK REFERENCE
 
-// let obj = {name : "Praveen"}
+let obj = {name : "Praveen"}
 
-// const weakRef = new WeakRef(obj)
+const weakRef = new WeakRef(obj)
 
-// console.log(weakRef.deref())
+console.log(weakRef.deref())
 
-// // WEAK MAP
+// WEAK MAP
 
-// let user = {name : "Praveen"}
+let user = {name : "Praveen"}
 
-// const weakMp = new WeakMap()
-// weakMp.set(user, "user data")
+const weakMp = new WeakMap()
+weakMp.set(user, "user data")
 
-// user = null                        // obj reference make null so obj, GB
-// console.log(weakMp.get(user))
+user = null                        // obj reference make null so obj, GB
+console.log(weakMp.get(user))
 
 // /////////////////
 
-// // WEAK SET
+// WEAK SET
 
-// const weakst = new WeakSet()
+const weakst = new WeakSet()
 
-// let obj1 = {a : 1}
-// let obj2 = {b : "Name"}
+let obj1 = {a : 1}
+let obj2 = {b : "Name"}
 
-// weakst.add(obj1)
-// weakst.add(obj2)
+weakst.add(obj1)
+weakst.add(obj2)
 
-// console.log(weakst.has(obj1))
+console.log(weakst.has(obj1))
 
-// weakst.delete(obj1)
+weakst.delete(obj1)
 
-// console.log(weakst.has(obj1))
+console.log(weakst.has(obj1))
 
 // ///////////////////
 
@@ -354,13 +354,32 @@ sample.call(person2, "Hai")
 
 //////////////////
 
-let user ={
-    name : "Praveen",
-    greet(msg){
-        console.log(`${msg}, ${this.name}`)
+// let user ={
+//     name : "Praveen",
+//     greet(msg){
+//         console.log(`${msg}, ${this.name}`)
+//     }
+// }
+
+// let user2 = {name : "Rohith"}
+
+// user.greet.call(user2,"Hello")
+
+//////////////////////////
+
+// Prototype chaining
+
+const obj1 ={
+    msg(){
+        console.log("hello")
     }
 }
 
-let user2 = {name : "Rohith"}
+const obj2={
+    hello:"hello word"
+}
 
-user.greet.call(user2,"Hello")
+Object.setPrototypeOf(obj2, obj1)
+
+console.log(obj1.hello)
+obj2.msg()
