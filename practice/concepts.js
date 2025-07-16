@@ -369,17 +369,96 @@ sample.call(person2, "Hai")
 
 // Prototype chaining
 
-const obj1 ={
-    msg(){
-        console.log("hello")
+// const obj1 ={
+//     msg(){
+//         console.log("hello")
+//     }
+// }
+
+// const obj2={
+//     hello:"hello word"
+// }
+
+// Object.setPrototypeOf(obj2, obj1)
+
+// console.log(obj1.hello)
+// obj2.msg()
+
+/////////////
+
+// Encapsulation in OOPs
+class BankAccount {
+  #balance = 0; // private field
+
+  deposit(amount) {
+    if (amount > 0) {
+      this.#balance += amount;
+    }
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+}
+
+const account = new BankAccount();
+account.deposit(1000);
+console.log(account.getBalance()); 
+
+//console.log(account.#balance); // error
+
+//////////////////////////
+
+// Conditionally merge objects
+
+// let obj1 = {a:1, b:2, c:3, d :4}
+// let obj2 = {e:5, c:2, f:8, b:2}
+
+// let result = {}
+for(let key in obj1){
+    if(key in obj2){
+        result[key] = [obj1[key], obj2[key]]
+    }else{
+        result[key] = obj1[key]
     }
 }
 
-const obj2={
-    hello:"hello word"
+for(let key in obj2){
+    if(!(key in obj1)){
+        result[key] = obj2[key]
+    }
 }
 
-Object.setPrototypeOf(obj2, obj1)
+console.log(result)
 
-console.log(obj1.hello)
-obj2.msg()
+///////////////////
+
+// check all values are fractional
+
+function checkFractional(...args){
+    let isTrue = args.every(num => typeof num === "number" && !Number.isInteger(num))
+    
+    if(isTrue){
+        throw new Error("all values are variadic ")
+    }
+    console.log("all are not variadic")
+}
+
+checkFractional(1.2, 3.5, 0.75)
+
+//////////////////////
+
+// Minutes passsed today
+
+let today = new Date()
+
+let dayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate())
+
+let diff = today - dayStart
+
+let ans = Math.floor(diff/60000)
+
+console.log(today)
+console.log(dayStart)
+console.log(diff)
+console.log(ans)
