@@ -288,44 +288,44 @@ console.log(weakst.has(obj1))
 
 // ILLEGAL SHADOWING
 
-var x = 10
-{
-  let x = 20
-  console.log(x)
-}
+// var x = 10
+// {
+//   let x = 20
+//   console.log(x)
+// }
 
 ///////////////////
 
 // FLATTEN MULTIDIMENTIONAL ARRAY
 
-function Flatten(arr){
-  let result = []
-  for(let item of arr){
-    if(Array.isArray(item)){
-      result = result.concat(Flatten(item))
-    }else{
-      result.push(item)
-    }
-  }
-  return result
-}
+// function Flatten(arr){
+//   let result = []
+//   for(let item of arr){
+//     if(Array.isArray(item)){
+//       result = result.concat(Flatten(item))
+//     }else{
+//       result.push(item)
+//     }
+//   }
+//   return result
+// }
 
 // const arr = [1, [2, [3, [4, 5,6,7],8,9,10]],11];
 // console.log(Flatten(arr))
 
 // FREQUENCY OF ARRAY
 
-let arr= [1,2,3,1,4,5,2,7,3,8,5,10]
+// let arr= [1,2,3,1,4,5,2,7,3,8,5,10]
 
-let count = {}
+// let count = {}
 
-for(let num of arr){
-    count[num] = (count[num] || 0) + 1
-}
+// for(let num of arr){
+//     count[num] = (count[num] || 0) + 1
+// }
 
-let sort = Object.entries(count).sort((a,b)=> b[1] - a[1])
+// let sort = Object.entries(count).sort((a,b)=> b[1] - a[1])
 
-console.log(sort)
+// console.log(sort)
 
 // CURRYING 
 
@@ -387,23 +387,23 @@ sample.call(person2, "Hai")
 /////////////
 
 // Encapsulation in OOPs
-class BankAccount {
-  #balance = 0; // private field
+// class BankAccount {
+//   #balance = 0; // private field
 
-  deposit(amount) {
-    if (amount > 0) {
-      this.#balance += amount;
-    }
-  }
+//   deposit(amount) {
+//     if (amount > 0) {
+//       this.#balance += amount;
+//     }
+//   }
 
-  getBalance() {
-    return this.#balance;
-  }
-}
+//   getBalance() {
+//     return this.#balance;
+//   }
+// }
 
-const account = new BankAccount();
-account.deposit(1000);
-console.log(account.getBalance()); 
+// const account = new BankAccount();
+// account.deposit(1000);
+// console.log(account.getBalance()); 
 
 //console.log(account.#balance); // error
 
@@ -415,50 +415,89 @@ console.log(account.getBalance());
 // let obj2 = {e:5, c:2, f:8, b:2}
 
 // let result = {}
-for(let key in obj1){
-    if(key in obj2){
-        result[key] = [obj1[key], obj2[key]]
-    }else{
-        result[key] = obj1[key]
-    }
-}
+// for(let key in obj1){
+//     if(key in obj2){
+//         result[key] = [obj1[key], obj2[key]]
+//     }else{
+//         result[key] = obj1[key]
+//     }
+// }
 
-for(let key in obj2){
-    if(!(key in obj1)){
-        result[key] = obj2[key]
-    }
-}
+// for(let key in obj2){
+//     if(!(key in obj1)){
+//         result[key] = obj2[key]
+//     }
+// }
 
-console.log(result)
+// console.log(result)
 
 ///////////////////
 
 // check all values are fractional
 
-function checkFractional(...args){
-    let isTrue = args.every(num => typeof num === "number" && !Number.isInteger(num))
+// function checkFractional(...args){
+//     let isTrue = args.every(num => typeof num === "number" && !Number.isInteger(num))
     
-    if(isTrue){
-        throw new Error("all values are variadic ")
-    }
-    console.log("all are not variadic")
-}
+//     if(isTrue){
+//         throw new Error("all values are variadic ")
+//     }
+//     console.log("all are not variadic")
+// }
 
-checkFractional(1.2, 3.5, 0.75)
+// checkFractional(1.2, 3.5, 0.75)
 
 //////////////////////
 
 // Minutes passsed today
 
-let today = new Date()
+// let today = new Date()
 
-let dayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate())
+// let dayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate())
 
-let diff = today - dayStart
+// let diff = today - dayStart
 
-let ans = Math.floor(diff/60000)
+// let ans = Math.floor(diff/60000)
 
-console.log(today)
-console.log(dayStart)
-console.log(diff)
-console.log(ans)
+// console.log(today)
+// console.log(dayStart)
+// console.log(diff)
+// console.log(ans)
+
+///////////////////////////
+
+// fetch 
+
+// fetch('https://jsonplaceholder.typicode.com/posts/1')
+// .then(res => res.json())
+// .then(data => console.log(data))
+// .catch(error => console.error("error",error))
+
+
+/////////////
+
+// JWT expiry check
+
+// const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjM1ODg2MDAsInVzZXIiOiJqb2huZG9lIn0.VwOyo3kERU5lbdYFb2-XXXXXX";
+
+// const payload = token.split(".")[1]
+
+// const payloadJson = atob(payload)
+
+// const payloadObj = JSON.parse(payloadJson)
+
+// const currentTime = Math.floor(Date.now()/1000)
+
+// const isExpired = payloadObj < currentTime
+
+// console.log(isExpired)
+
+////////////////
+
+
+// set enviorment variable without dotenv
+
+// $env:PORT="5000"
+// $env:NODE_ENV="development"
+// node app.js
+
+console.log(process.env.NODE_ENV)
