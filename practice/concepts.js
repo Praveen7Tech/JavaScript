@@ -1,6 +1,8 @@
 
 // //DELAY FUNCTION USING PROMISE
 
+const { get } = require("http")
+
 // function delay(ms) {
 //   return new Promise((resolve) => setTimeout(resolve, ms));
 // }
@@ -200,7 +202,7 @@ console.log(weakst.has(obj1))
 
 // //PROXY OBJECT 
 
-// //let obj = {name : "Praveen"}
+//let obj = {name : "Praveen"}
 
 // const proxyObj = new Proxy(obj,{
 //   get(target, prop){
@@ -501,3 +503,28 @@ sample.call(person2, "Hai")
 // node app.js
 
 console.log(process.env.NODE_ENV)
+
+////////////////////////
+
+// proxy object
+
+const person = {
+    name : "Praveen"
+}
+
+const handler = {
+    get(target,prop){
+        return target[prop]
+    },
+
+    set(target,prop,value){
+        target[prop] = value
+        return true
+    }
+}
+
+const proxy = new Proxy(person,handler)
+
+console.log(proxy.name)
+proxy.age = 25
+console.log(proxy.age)
