@@ -68,3 +68,42 @@ cron.schedule('0 9 * * *', ()=>{
 
 ///////////////////////////
 
+// event emitter
+
+const EventEmitter = require("events")
+
+const myEvent = new EventEmitter()
+
+myEvent.on("greet", (name)=>{
+    console.log(`Hello ${name}`)
+})
+
+myEvent.emit("greet", "Praveen")
+
+/////////////////// 
+
+
+// JWT creation
+
+const jwt = require("jswebtoken")
+
+const userData ={id:123,name:"Praveen",role:"admin"}
+const SecretKey = "MY_SECERET_KEY"
+
+const token = jwt.sign(userData, SecretKey, {expiresIn:"1h"})
+
+// verify token
+
+const decoded = jwt.verify(token, SecretKey)
+
+/////////////////////
+
+// error handling using event
+
+//const fs = require("fs")
+
+const stream = fs.createReadStream("file.txt")
+
+stream.on("error",(err)=>{
+    console.err("File read error", err.message)
+})
