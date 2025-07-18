@@ -528,3 +528,17 @@ const proxy = new Proxy(person,handler)
 console.log(proxy.name)
 proxy.age = 25
 console.log(proxy.age)
+
+//////////////////////////
+
+// event emitter
+
+const EventEmitter = require('events');
+
+const myEmitter = new EventEmitter();
+
+myEmitter.on('greet', () => {
+  console.log('Hello! Event received.');
+});
+
+myEmitter.emit('greet');
