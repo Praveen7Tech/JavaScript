@@ -571,3 +571,16 @@ async()
 // })
 
 
+
+///////////////////
+
+// THIS SUBSTITUTION IN NON STRICT MDE
+
+"use strict";
+
+function show() {
+  console.log(this);
+}
+
+show.call(42); // logs: 42 (no substitution in strict mode)
+
