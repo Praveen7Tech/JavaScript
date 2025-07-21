@@ -150,153 +150,153 @@ console.log(weakst.has(obj1))
 
 // //REMOVE LARGEST STRING FROM ARRAY
 
-// const strings = ["car", "apple", "bikerrrrrrrrrrr", "elephant"];
+const strings = ["car", "apple", "bikerrrrrrrrrrr", "elephant"];
 
-// function removeLarge(arr){
-//   let large = 0
-//   let index = -1
-//   for(let i = 0 ; i< arr.length ; i++){
-//     if(arr[i].length > large){
-//       large = arr[i].length
-//       index = i
-//     }
-//   }
+function removeLarge(arr){
+  let large = 0
+  let index = -1
+  for(let i = 0 ; i< arr.length ; i++){
+    if(arr[i].length > large){
+      large = arr[i].length
+      index = i
+    }
+  }
 
-//   arr.splice(index, 1)
-//   return arr
-// }
+  arr.splice(index, 1)
+  return arr
+}
 
-// console.log(removeLarge(strings))
+console.log(removeLarge(strings))
 
-// /////////////
-// //MERGE OBJECT WITHOUT REPLACE
+/////////////
+//MERGE OBJECT WITHOUT REPLACE
 
-// //const obj1 = { a: 1, b: 2 };
-// //const obj2 = { b: 3, c: 4, d: 5 };
+//const obj1 = { a: 1, b: 2 };
+//const obj2 = { b: 3, c: 4, d: 5 };
 
-// let merged = {...obj1}
+let merged = {...obj1}
 
-// for(let key in obj2){
-//   if(!(key in merged)){
-//     merged[key] = obj2[key]
-//   }
-// }
+for(let key in obj2){
+  if(!(key in merged)){
+    merged[key] = obj2[key]
+  }
+}
 
-// console.log(merged)
-
-
-// ///GENERATOR FUNCTION
-
-// function* generator(){
-//   yield "step 1";
-//   yield "step 2";
-//   yield "step 3";
-//   yield "step 4"
-// }
-
-// const gen = generator()
-
-// console.log(gen)
-
-// ////////////////////////
-
-// //PROXY OBJECT 
-
-//let obj = {name : "Praveen"}
-
-// const proxyObj = new Proxy(obj,{
-//   get(target, prop){
-//     console.log(`getting ${prop}`)
-//     return target[prop]
-//   },
-//   set(target,prop,value){
-//     console.log(`setting ${prop} to ${value}`)
-//     return target[prop] = 25
-//   }
-// })
-
-// console.log(proxyObj.name)
-// proxyObj.age = 25
-// console.log(proxyObj.age)
-
-// ////////////////
-
-// ///DEEP COPY
+console.log(merged)
 
 
-// // const obj = {
-// //     name :"Praveen",
-// //     details:{
-// //         place: "ekm"
-// //     }
-// // }
+///GENERATOR FUNCTION
 
-// let copy = JSON.parse(JSON.stringify(obj))
+function* generator(){
+  yield "step 1";
+  yield "step 2";
+  yield "step 3";
+  yield "step 4"
+}
 
-// copy.name = "Rohith"
-// copy.details.place = "kollam"
+const gen = generator()
 
-// console.log(obj)
-// console.log(copy)
+console.log(gen)
 
-// ///////////
+////////////////////////
 
-// //HiGHER ORDER FUNCTION (return another function)
+//PROXY OBJECT 
 
-// function Higher(num){
-//   return function(value){
-//     return num * value
-//   }
-// }
+let obj = {name : "Praveen"}
 
-// const answer = Higher(5)
-// console.log(answer(2))
+const proxyObj = new Proxy(obj,{
+  get(target, prop){
+    console.log(`getting ${prop}`)
+    return target[prop]
+  },
+  set(target,prop,value){
+    console.log(`setting ${prop} to ${value}`)
+    return target[prop] = 25
+  }
+})
 
-// /////////////
+console.log(proxyObj.name)
+proxyObj.age = 25
+console.log(proxyObj.age)
 
-// // 15 DAYS BEFORE DATE
+////////////////
 
-// let today = new Date()
-// let before = new Date()
+/DEEP COPY
 
-// before.setDate(today.getDate() - 15)
-// console.log(before.toDateString())
 
-// //////////////
+const obj = {
+    name :"Praveen",
+    details:{
+        place: "ekm"
+    }
+}
 
-// // CURRENT TIME ONLY
+let copy = JSON.parse(JSON.stringify(obj))
 
-// let now = new Date()
-// let date = now.toLocaleDateString()
-// let time = now.toLocaleTimeString()
+copy.name = "Rohith"
+copy.details.place = "kollam"
 
-// console.log(time)
-// console.log(date)
+console.log(obj)
+console.log(copy)
 
-// // throw error in every arguments are null
+///////////
 
-// function Check(...args){
-//     const isNull = args.every(arg=> arg === null || arg == undefined)
+//HiGHER ORDER FUNCTION (return another function)
+
+function Higher(num){
+  return function(value){
+    return num * value
+  }
+}
+
+const answer = Higher(5)
+console.log(answer(2))
+
+/////////////
+
+// 15 DAYS BEFORE DATE
+
+let today = new Date()
+let before = new Date()
+
+before.setDate(today.getDate() - 15)
+console.log(before.toDateString())
+
+//////////////
+
+// CURRENT TIME ONLY
+
+let now = new Date()
+let date = now.toLocaleDateString()
+let time = now.toLocaleTimeString()
+
+console.log(time)
+console.log(date)
+
+// throw error in every arguments are null
+
+function Check(...args){
+    const isNull = args.every(arg=> arg === null || arg == undefined)
     
-//     if(isNull){
-//         throw new Error("Every arguments are null..!")
-//     }
-//     console.log("Not all argumets are null")
-// }
+    if(isNull){
+        throw new Error("Every arguments are null..!")
+    }
+    console.log("Not all argumets are null")
+}
 
-// Check(null,undefined)
+Check(null,undefined)
 
-// //////////
+//////////
 
-// ILLEGAL SHADOWING
+ILLEGAL SHADOWING
 
-// var x = 10
-// {
-//   let x = 20
-//   console.log(x)
-// }
+var x = 10
+{
+  let x = 20
+  console.log(x)
+}
 
-///////////////////
+/////////////////
 
 // FLATTEN MULTIDIMENTIONAL ARRAY
 

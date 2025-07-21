@@ -48,3 +48,5 @@ Promise.resolve().then(()=>{
 })
 
 console.log("5")
+
+console.log(process.memoryUsage())

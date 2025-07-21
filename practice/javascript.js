@@ -179,17 +179,17 @@
 
 // console.log(result)
 
-// // FUNCTION COMPOSITION //
+// FUNCTION COMPOSITION //
 
-// const fn1 = (x) => x + 2;
+const fn1 = (x) => x + 2;
 
-// const fn2 = (x) => x * 3;
+const fn2 = (x) => x * 3;
 
-// const compose = (x) => fn2(fn1(x));
+const compose = (x) => fn2(fn1(x));
 
-// const result = compose(6);
+const result = compose(6);
 
-// console.log(result)
+console.log(result)
 
 
 // // HIGHER ORDER FUNCTION ///
