@@ -105,6 +105,98 @@ class LinkedList {
         this.size--
     }
 
+    // delete nth node from last in a singly linked list - two pointer
+    deleteNode(n){
+        let fast = this.head
+        let slow = this.head
+
+        for(let i=0;i<n;i++){
+            if(!fast) return
+            fast = fast.next
+        }
+
+        if(!fast){
+            this.head = this.head.next
+            return
+        }
+
+        while(fast.next){
+            fast = fast.next
+            slow = slow.next
+        }
+
+        slow.next = slow.next.next
+    }
+
+    deleteNthNode(n){
+        if(!this.head) return null
+
+        let slow = this.head
+        let fast = this.head
+
+        for(let i=0;i<n;i++){
+            if(!fast) return null
+            fast = fast.next
+        }
+
+        if(!fast){
+            this.head = this.head.next
+            return 
+        }
+
+        while(fast.next){
+            slow = slow.next
+            fast = fast.next
+        }
+
+        slow.next = slow.next.next
+        this.size--
+    }
+
+    // search a value and return the index.
+    searchValue(value){
+        if(this.isEmpty()){
+            return -1
+        }
+        let index = 0;
+        let prev = this.head
+        while(prev){
+            if(prev.value === value){
+                return index
+            }
+            prev = prev.next;
+            index++
+        }
+        return -1
+    }
+
+    //Reverse list
+    reverseList(){
+        let prev = null;
+        let curr = this.head
+        while(curr){
+            let next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next
+        }
+        this.head =prev
+    }
+
+    findMiddle(){
+        if(!this.head){
+            return
+        }
+        let fast = this.head
+        let slow = this.head
+        while(fast && fast.next){
+            slow = slow.next
+            fast = fast.next.next
+        }
+
+        return slow.value
+    }
+
     print(){
         if(this.isEmpty()){
             console.log("List is empty")
@@ -142,6 +234,17 @@ list.print()
 list.insert(10, 0)
 list.print()
 
+list.insert(20,1)
+list.print()
+
+list.insert(30,2)
+list.print()
+
+list.insert(40,1)
+list.print()
+
+list.reverseList()
+list.print()
 
 
 
