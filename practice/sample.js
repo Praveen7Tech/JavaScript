@@ -383,3 +383,126 @@ for(let i=0;i<arr.length;i++){
 
 console.log(arr)
 
+//remove all duplicates and show only values that occurs once
+
+//let arr = [2, 5, 6, 2, 3, 5, 7, 8, 3];
+
+for(let i=0;i<arr.length;i++){
+    let count = 0
+    for(let j=0;j<arr.length;j++){
+        if(arr[i] === arr[j]){
+            count++
+        }
+    }
+    if(count > 1){
+        let val = arr[i]
+        for(let k=0;k<arr.length;k++){
+            if(arr[k] === val){
+                for(let m=k;m<arr.length-1;m++){
+                    arr[m] = arr[m+1]
+                }
+                arr.length--
+                k--
+            }
+        }
+        i--
+    }
+}
+
+console.log(arr)
+
+//prime numbers
+
+//let arr =[1,2,-3,4,5,6,7]
+
+for(let i = 0; i < arr.length ; i++){
+    if (arr[i] < 2){
+        continue;
+    }
+    let isPrime = 0
+    for(let j=2; j<=arr[i] / 2 ; j++){
+        if(arr[i] % j === 0){
+            isPrime = 1
+        }
+    }
+    if(isPrime ===0){
+        console.log(arr[i])
+    }
+}
+
+///print duplicated values
+
+//let arr = [1,2,5,3,5,4,8,2,5,6,1,7,8]
+
+for(let i=0;i<arr.length;i++){
+    if(arr[i] == -1) continue
+    let duplicate = false
+    for(let j=i+1;j<arr.length;j++){
+        if(arr[i] == arr[j]){
+            duplicate = true
+            arr[j] = -1
+        }
+    }
+    if(duplicate){
+        console.log(arr[i])
+    }
+}
+
+
+//REMOVE UNIQUE FROM ARRAY
+
+//let arr = [1,2,10,3,4,3,5,6,7,5,8,6,1,3]
+
+for(let i=0;i<arr.length;i++){
+    let count = 0
+    for(let j=0;j<arr.length;j++){
+       if(arr[i] == arr[j]){
+           count++
+       }
+    }
+    if(count < 2){
+        for(let k=i;k<arr.length;k++){
+            arr[k] = arr[k+1]
+        }
+        arr.length--
+        i--
+    }
+}
+
+console.log(arr)
+
+////////////////////////
+
+//Merge two array and remove duplicate
+
+//let arr=[1,2,3,4]
+let arr2=[4,5,6]
+
+for(let i = 0 ; i < arr2.length ; i++){
+    let isSame = false
+    for(let j = 0 ; j < arr.length ; j++){
+        if(arr[i] === arr[j]){
+            isSame = true
+        }
+    }
+    if(!isSame){
+        arr[arr.length] = arr2[i]
+    }
+}
+
+console.log(arr)
+
+////////////////////////////////
+
+//Return true if the array is ascending otherwise false
+
+//let arr  = [5,4,3,2]
+let isAscending = true
+
+for(i = 0 ; i < arr.length ; i++){
+    if(arr[i] >= arr[i+1]){
+        isAscending = false
+    }
+}
+
+console.log(isAscending)
