@@ -57,7 +57,7 @@ for(let {name, age} of arr){
 
 console.log(result)
 
-// EDUCE METHOD
+// REDUCE METHOD
 // let result = arr.reduce((acc,curr)=>{
 //     if(acc[curr.age]){
 //         if(typeof acc[curr.age] === "string"){
