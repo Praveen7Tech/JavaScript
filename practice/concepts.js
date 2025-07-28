@@ -542,3 +542,37 @@ myEmitter.on('greet', () => {
 });
 
 myEmitter.emit('greet');
+
+
+//////////////////////////
+
+// READ AND MERGE FILES USING PROMISE CHAINING
+
+function readFilePromise(filePath) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+      if (err) return reject(err);
+      resolve(data);
+    });
+  });
+}
+
+function ReadMerge(file1,file2){
+    let result = []
+    return readFilePromise(file1)
+    .then((data1)=>{
+        result.push(data1)
+        return readFilePromise(file2)
+    })
+    .then((data2)=>{
+        result.push(data2)
+        return result
+    })
+    .catch(error => console.error("Error in merge data", error))
+}
+
+let file1 = file1.txt
+let file2 = file2.txt
+
+ReadMerge(file1,file2)
+.then(res => console.log(res))
