@@ -33,7 +33,6 @@ console.log(removeNull)
 // group elements from object based on age
 
 
-
 let arr = [
     {name:"felwin",age:12},
     {name:'praveen',age:27},
@@ -41,12 +40,12 @@ let arr = [
     {name:"rohith",age:30}
 ]
 
-let result = {}
+//let result = {}
 
-for(let {name, age} of arr){
+for(let {name,age} of arr){
     if(result[age]){
         if(typeof result[age] === "string"){
-            result[age] = [result[age], name]
+            result[age] = [result[age] , name]
         }else{
             result[age].push(name)
         }
@@ -57,18 +56,33 @@ for(let {name, age} of arr){
 
 console.log(result)
 
-// REDUCE METHOD
-// let result = arr.reduce((acc,curr)=>{
-//     if(acc[curr.age]){
-//         if(typeof acc[curr.age] === "string"){
-//             acc[curr.age] = [acc[curr.age], curr.name]
-//         }else{
-//             acc[curr.age].push(curr.name)
-//         }
-//     }else{
-//         acc[curr.age] = curr.name
-//     }
-//     return acc
-// },{})
+//REDUCE METHOD
+let result = arr.reduce((acc,curr)=>{
+    if(acc[curr.age]){
+        if(typeof acc[curr.age] === "string"){
+            acc[curr.age] = [acc[curr.age], curr.name]
+        }else{
+            acc[curr.age].push(curr.name)
+        }
+    }else{
+        acc[curr.age] = curr.name
+    }
+    return acc
+},{})
 
-// console.log(result)
+console.log(result)
+
+/////////////
+// LARGER KEY IN OBJ
+
+const myObject = {
+  a: 10,
+  b: 50,
+  c: 20
+};
+
+const entries = Object.entries(myObject)
+
+entries.sort(([,val1],[,val2])=> val2 - val1)
+
+let larger = entries[0][0]
