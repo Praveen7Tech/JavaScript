@@ -86,3 +86,38 @@ const entries = Object.entries(myObject)
 entries.sort(([,val1],[,val2])=> val2 - val1)
 
 let larger = entries[0][0]
+
+////////////////////////
+
+// FUNCTION MEMOIZATION
+
+// normal function
+function square(n){
+    return n * n
+}
+console.log(square(5)) // every time we use same input the function recompute again
+
+/////
+
+function Memoized(fn){
+    const cache ={}
+    
+    return function(n){
+        if(cache[n]){
+            console.log("answer from memoized object")
+            return cache[n]
+        }
+
+        const result = fn(n)
+        cache[n] = result
+        console.log("result computed")
+        return result
+    }
+}
+
+const MemoSquare = Memoized(function(n){
+    return n * n
+})
+
+console.log(MemoSquare(5))
+console.log(MemoSquare(5)) // same input it give the answer from memoized object

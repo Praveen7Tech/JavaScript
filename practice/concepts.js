@@ -576,3 +576,18 @@ let file2 = file2.txt
 
 ReadMerge(file1,file2)
 .then(res => console.log(res))
+
+
+// FUNCTION COMPOSITION
+
+const add =(x) => x + 5
+const multiply=(x) => x * 3
+const subtract=(x) => x - 10
+
+//const compose = subtract(multiply(add(5)))
+
+const compose = (f,g,h)=> x => f(g(h(x)))
+
+let final = compose(subtract, multiply, add)
+
+console.log(final(5))
