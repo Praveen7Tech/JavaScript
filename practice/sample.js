@@ -506,3 +506,44 @@ for(i = 0 ; i < arr.length ; i++){
 }
 
 console.log(isAscending)
+
+
+
+
+const person = {
+  name: 'John',
+  sayName: function () {
+    console.log(this.name); // Refers to the 'person' object
+  },
+};
+
+person.sayName(); // Outputs 'John'
+
+
+// DEEP COPY ////
+
+
+let array = [1,2,3,4]
+
+let deep = JSON.parse(JSON.stringify(array))
+
+deep[2]=10
+
+console.log(deep)
+
+console.log(array)
+
+///////////////
+
+//let array = [5,6,8,7,3,10]
+
+let smallest= array.reduce((min, num)=>{
+  if(num < min);
+  smallest = num;
+})  
+
+
+console.log(smallest);
+
+
+
