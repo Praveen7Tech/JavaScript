@@ -547,3 +547,34 @@ console.log(smallest);
 
 
 
+///let array = [5, 6, 8, 7, 3, 10];
+
+let smallest = array.reduce((min, num) => {
+  return num < min ? num : min;
+}, array[0]); // Initialize with the first element of the array
+
+console.log(smallest);
+
+
+let round = Math.pow(5,2)
+
+console.log(round)
+
+
+let random = Math.random()
+
+console.log(random)
+
+
+// INSTANCE ////
+
+function car( make, model){
+
+  this.make = 1;
+  this.model = 2;
+}
+
+let mycar = new car('toyota' , 'fortuner')
+
+console.log(mycar instanceof car)
+
