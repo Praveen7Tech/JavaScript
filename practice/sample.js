@@ -676,4 +676,53 @@ console.log(mycar instanceof car)
 ////////////////////////////
 
 
+// Promise.resolve(1)
+//   .finally((data) => {
+//     console.log(data);
+//     return Promise.reject('error');
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//     throw 'error2';
+//   })
+//   .finally((data) => {
+//     console.log(data);
+//     return Promise.resolve(2).then(console.log);
+//   })
+//   .then(console.log)
+//   .catch(console.log);
+
+// const promise1 = Promise.resolve(1);
+// const promise2 = Promise.resolve(2);
+// const promise3 = Promise.resolve(3);
+// const promise4 = Promise.reject(4);
+
+// const promiseAll = async () => {
+//   const group1 = await Promise.all([promise1, promise2]);
+//   const group2 = await Promise.all([promise3, promise4]);
+//   return [group1, group2];
+// };
+
+// promiseAll().then(console.log).catch(console.log);
+
+////////////////////////////////
+
+// const users = [
+// { firstName: "Alok", lastName: "Raj", age: 23 },
+// { firstName: "Ashish", lastName: "Kumar", age: 29 },
+// { firstName: "Ankit", lastName: "Roy", age: 29 },
+// { firstName: "Pranav", lastName: "Mukherjee", age: 50 },
+// ];
+
+// users.map((user)=> {
+//     if(user.age < 30){
+//         console.log(user.firstName)
+//     }
+// })
+
+// let x = users.filter((user) => user.age < 30)
+// x.map((n)=>{
+//     console.log(n.firstName)
+// })
+
 
