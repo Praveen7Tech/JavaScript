@@ -578,3 +578,102 @@ let mycar = new car('toyota' , 'fortuner')
 
 console.log(mycar instanceof car)
 
+
+
+//////////////////////////
+
+
+
+// 2 . print multiplication
+
+// let arr = [1,2,3,4,5]
+// let j = 0
+
+// for(let i = 0 ; i < arr.length ; i++){
+//     console.log(j += arr[i])
+// }
+
+///////////////////////////
+
+// 3 flatten array
+// let arr=[1, 2, 3, [4, 5], [6, 7, 8, [9, 10, 11]]]
+
+// function flatten(arr){
+//     let result = []
+//     for(let i = 0 ; i< arr.length ; i++){
+//         if(Array.isArray(arr[i])){
+//             let flat = flatten(arr[i])
+//             for(let j = 0 ; j< flat.length ; j++){
+//                 result.push(flat[j])
+//             }
+//         }else{
+//             result.push(arr[i])
+//         }
+//     }
+//     return result
+// }
+
+// console.log(flatten(arr))
+
+////////////////////////////////////
+
+// 4 . scope chaining 
+
+// let b;
+// console.log(b);              // undefined
+// function B() {
+//   let b;
+//   console.log(b);           // undefined
+//   function E() {
+//     b = 6;
+//     console.log(b);         // 6
+//   }
+//   b = 2;
+//   E();
+//   console.log(b);           // 6
+// }
+
+// b = 3;
+
+// B();
+
+///////////////////////
+
+// 5 . nested functions
+
+// function func1(a){
+//     console.log(a)
+//     return function func2(b){
+//         console.log(b)
+//         return function func3(c){
+//             console.log(c)
+//             return function func4(d){
+//                 console.log(d)
+//                 return a + b + c + d
+//             }
+//         }
+//     }
+// }
+
+
+// console.log(func1(1)(2)(3)(4))
+
+/////////////////////////////////
+
+// 6 . this keyword working .call
+
+// const Batman = {
+//     name : "Batman",
+//     message : function(){
+//         return `I am ${this.name}, ${this.name === "Batman" ? "Guaerdian of the Gotham City" : "Why so Serious"}`
+//     }
+// }
+
+// const Joker ={name : "Joker"}
+
+// console.log(Batman.message())
+
+////////////////////////////
+
+
+
