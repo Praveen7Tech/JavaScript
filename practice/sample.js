@@ -537,10 +537,10 @@ console.log(array)
 
 //let array = [5,6,8,7,3,10]
 
-let smallest= array.reduce((min, num)=>{
-  if(num < min);
-  smallest = num;
-})  
+// let smallest= array.reduce((min, num)=>{
+//   if(num < min);
+//   smallest = num;
+// })  
 
 
 console.log(smallest);
