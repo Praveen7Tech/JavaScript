@@ -377,18 +377,18 @@ console.log(result)
 
 // GENERATOR ///
 
-// function* myGenerator() {
-//     yield 1; // This is a pause point
-//     yield 2;
-//     yield 3;
-//   }
+function* myGenerator() {
+    yield 1; // This is a pause point
+    yield 2;
+    yield 3;
+  }
   
-//   const generator = myGenerator();
+  const generator = myGenerator();
   
-//   console.log(generator.next()); // { value: 1, done: false }
-//   console.log(generator.next()); // { value: 2, done: false }
-//   console.log(generator.next()); // { value: 3, done: false }
-//   console.log(generator.next()); // { value: undefined, done: true }
+  console.log(generator.next()); // { value: 1, done: false }
+  console.log(generator.next()); // { value: 2, done: false }
+  console.log(generator.next()); // { value: 3, done: false }
+  console.log(generator.next()); // { value: undefined, done: true }
 
 
 // // print 1 to 100 generator////

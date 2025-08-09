@@ -72,9 +72,6 @@ const worker = new Worker("./child.js",{
     workerData : {name : "praveen", value: 5000}
 })
 
-console.log("thread : ", isMainThread)
-console.log("worker thread : ", threadId)
-
 worker.on("message", (msg)=>{
     console.log("data from worker :",msg)
 })
@@ -87,13 +84,12 @@ worker.on("exit", (code)=>{
     console.log("worker exited with code : ", code)
 })
 
-// // worker.js //
+// worker.js //
+const {parentPort} = require("worker_threads")
 
-// const {parentPort} = require("worker_threads")
+let result = 0
+for(let i = 1 ; i <= 10 ; i++){
+    result += i
+}
 
-// let result = 0
-// for(let i = 1 ; i <= 10 ; i++){
-//     result += i
-// }
-
-// parentPort.postMessage(result)
+parentPort.postMessage(result)
