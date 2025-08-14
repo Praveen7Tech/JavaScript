@@ -731,7 +731,7 @@ console.log(mycar instanceof car)
 //Return true if the array is ascending otherwise false
 
 //let arr  = [5,4,3,2]
-let isAscending = true
+//let isAscending = true
 
 for(i = 0 ; i < arr.length ; i++){
     if(arr[i] >= arr[i+1]){
