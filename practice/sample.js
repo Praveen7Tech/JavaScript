@@ -448,3 +448,100 @@
 
 // console.log(MemoSquare(5))
 // console.log(MemoSquare(5)) // same input it give the answer from memoized object
+
+
+
+
+// event emitter
+
+const EventEmitter = require('events');
+
+const myEmitter = new EventEmitter();
+
+myEmitter.on('greet', () => {
+  console.log('Hello! Event received.');
+});
+
+myEmitter.emit('greet');
+
+
+//////////////////////////
+
+// READ AND MERGE FILES USING PROMISE CHAINING
+
+function readFilePromise(filePath) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+      if (err) return reject(err);
+      resolve(data);
+    });
+  });
+}
+
+function ReadMerge(file1,file2){
+    let result = []
+    return readFilePromise(file1)
+    .then((data1)=>{
+        result.push(data1)
+        return readFilePromise(file2)
+    })
+    .then((data2)=>{
+        result.push(data2)
+        return result
+    })
+    .catch(error => console.error("Error in merge data", error))
+}
+
+let file1 = file1.txt
+let file2 = file2.txt
+
+ReadMerge(file1,file2)
+.then(res => console.log(res))
+
+
+// FUNCTION COMPOSITION
+
+const add =(x) => x + 5
+const multiply=(x) => x * 3
+const subtract=(x) => x - 10
+
+const compose = subtract(multiply(add(5)))
+
+//const compose = (f,g,h)=> x => f(g(h(x)))
+
+let final = compose(subtract, multiply, add)
+
+console.log(final(5))
+
+////////////////////////////////
+
+// FIND NTH LARGEST VALUE FROM ARRAY
+
+let arr =[8,4,1,7,10,10,3,5,6,7,8]
+
+function NthLarge(arr,n){
+    if(n > arr.length || n <= 0){
+        return null
+    }
+    
+    let temp = [...arr]
+    
+    for(let count = 1 ; count <= n ; count++){
+        let max = 0
+        for(let i = 1; i < temp.length ; i++){
+            if(temp[i] > temp[max]){
+                max = i
+            }
+        }
+        
+        if(count === n){
+            return temp[max]
+        }
+        
+        temp.splice(max, 1)
+    }
+}
+
+console.log(NthLarge(arr,3))
+
+
